@@ -12,7 +12,7 @@ class GenericImageCommand {
   constructor (commandProps, URLParseFN) {
     this.cmdProps = commandProps;
     this.URLParseFN = URLParseFN || this.defaultURLParseFN;
-    this.requestURL = commandProps.reqURL || 'http://127.0.0.1:65535/api/$ENDPOINT';
+    this.requestURL = commandProps.reqURL || 'https://dankmemer.services/api/$ENDPOINT';
   }
 
   /** @param {FunctionParams} */

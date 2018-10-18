@@ -11,8 +11,8 @@ module.exports = new GenericCommand(
         content: `*No first argument detected, entering monologue mode...*
 
 Use this command with multiple sorts of secondary commands: 
-Use \`${guildEntry.props.prefix} whitelist add Mr Memer\` to establish a whitelist and add the role with the name 'Mr Memer'
-Use \`${guildEntry.props.prefix} whitelist remove Mr Memer\` to remove the role with the name 'Mr Memer' from the whitelist, no more memes for you!
+Use \`${guildEntry.props.prefix} whitelist add Normies\` to establish a whitelist and add the role with the name 'Normies'
+Use \`${guildEntry.props.prefix} whitelist remove Normies\` to remove the role with the name Normies' from the whitelist, no more memes for you!
 Use \`${guildEntry.props.prefix} whitelist purge\` to remove the entire whitelist and *set everyone free*, raise anarchy, make a meme castle or whatever.`,
         reply: true
       };
@@ -37,13 +37,13 @@ Use \`${guildEntry.props.prefix} whitelist purge\` to remove the entire whitelis
     switch (args[0]) {
       case 'add':
         await guildEntry.addWhitelistedRole(role.id).save();
-        return 'Added that role to the whitelist, welcome to the meme club, kids.';
+        return 'Added that role to the whitelist, welcome to the meme club';
       case 'remove':
         await guildEntry.yeetWhitelistedRole(role.id).save();
-        return 'Yeeted that role out of the whitelist, if it was even in there.';
+        return 'Yeeted that role out of the whitelist';
       case 'purge':
         await guildEntry.purgeWhitelist().save();
-        return 'Alright m8, I purged the whole whitelist, all people are free to dab in #general now.';
+        return 'Alright m8, I purged the whole whitelist, all people are free to meme';
       default:
         return {content: "Oi, that's not a valid command m8, you gotta use `add`, `remove`, or `purge`.", reply: true};
     }
